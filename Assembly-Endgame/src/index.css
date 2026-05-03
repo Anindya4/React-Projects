@@ -1,0 +1,178 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #262626;
+  color: white;
+  font-family: 'Hanken Grotesk', sans-serif;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+header {
+  text-align: center;
+}
+
+header > h1 {
+  color: #f9f4da;
+}
+
+header > p {
+  color: #8e8e8e;
+}
+
+.status-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #F9F4DA;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 4px;
+  margin-block: 30px;
+}
+.status-section.won {
+  background-color: #10a958;
+}
+.status-section.lost {
+  background-color: #fa4c4c;
+}
+.status-section.wrongGuess {
+  background-color: #b87dd2;
+  border: 1px dashed white;
+}
+.status-section.wrongGuess > p{
+  font-size: 25px;
+  font-style: italic;
+}
+.status-section > h2 {
+  margin: 5px;
+  font-size: 24px;
+}
+
+.status-section > p{
+  margin: 5px;
+  font-size: 18px;
+}
+
+.language-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 650px;
+  margin: 0 auto;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.lang-chips {
+  text-align: center;
+  line-height: 30px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-chips.lost::before{
+  content: "☠️";
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 0.85rem;
+  top:0;
+  left:0;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.words {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.words > span {
+  height: 40px;
+  font-size: 24px;
+  width: 40px;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgb(183, 183, 183);
+}
+
+.words > span.missed-word{
+  color:#fa4c4c ;
+}
+
+.keyboard {
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.keyboard > button {
+  height: 35px;
+  width: 35px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 152, 27);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: box-shadow 0.1s ease;
+}
+
+.keyboard>button.correct {
+  background-color: #10A95B;
+}
+
+.keyboard>button.wrong {
+  background-color: #EC5D49;
+}
+
+.keyboard> button:active {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: scale(0.96);
+}
+.keyboard>button:disabled{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.newgame {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+
+.newgame > button {
+  padding: 10px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(28, 134, 233);
+  color:white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  }
+  
+.newgame>button:active {
+  transform: translateY(3px);
+}
